@@ -67,7 +67,7 @@ Thực hiện cài đặt trên region 1 theo hướng dẫn ở link sau:
 ####3. Sau khi cài đặt
 Trên controller node chúng ta sẽ tạo Keystone dùng cho region 2 như sau
 
-####Bước 1: Tạo end point cho keystone
+#####Bước 1: Tạo end point cho keystone
 
     openstack endpoint create \
     --publicurl http://10.145.25.140:5000/v2.0 \
@@ -77,7 +77,7 @@ Trên controller node chúng ta sẽ tạo Keystone dùng cho region 2 như sau
     identity
 Đây là endpoint sử dụng cho region 2 với địa chỉ là public ip của controller trên region 1
 
-####Bước 2: Tạo endpoint cho glance
+#####Bước 2: Tạo endpoint cho glance
 
     openstack endpoint create \
     --publicurl http://10.145.25.160:9292 \
@@ -86,7 +86,7 @@ Trên controller node chúng ta sẽ tạo Keystone dùng cho region 2 như sau
     --region RegionTwo \
     image
 
-####Bước 3: Tạo endpoint cho nova
+#####Bước 3: Tạo endpoint cho nova
 
     openstack endpoint create \
 	--publicurl http://10.145.25.160:8774/v2/%\(tenant_id\)s \
@@ -95,7 +95,7 @@ Trên controller node chúng ta sẽ tạo Keystone dùng cho region 2 như sau
 	--region RegionTwo \
 	compute
 
-####Bước 4: Tạo endpoint cho neutron
+#####Bước 4: Tạo endpoint cho neutron
 
     openstack endpoint create \
     --publicurl http://10.145.25.160:9696 \
